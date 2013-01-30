@@ -24,7 +24,7 @@ as automated functional testing.
 The basics:
 
 ```ruby
-    require 'accessibility/keyboard
+    require 'accessibility/keyboard'
 
     include Accessibility::Keyboard
 
