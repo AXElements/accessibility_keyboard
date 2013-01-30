@@ -15,8 +15,6 @@ combination with a gem for performing other GUI manipulations, like
 AXElements, this gem is very powerful and can be used for tasks such
 as automated functional testing.
 
-[Documentation](http://rdoc.info/gems/accessibility_keyboard/frames)
-
 [![Dependency Status](https://gemnasium.com/AXElements/accessibility_keyboard.png)](https://gemnasium.com/AXElements/accessibility_keyboard)
 [![Code Climate](https://codeclimate.com/badge.png)](https://codeclimate.com/github/AXElements/accessibility_keyboard)
 
