@@ -5,8 +5,9 @@ require 'accessibility/key_coder'
 
 ##
 # Generate a sequence of keyboard events given a sequence of tokens.
-# The token format is defined by the {Lexer} class output; it is best
-# to use that class to generate the tokens.
+# The token format is defined by the
+# {Accessibility::Keyboard::EventGenerator}
+# class output; it is best to use that class to generate the tokens.
 #
 # @example
 #

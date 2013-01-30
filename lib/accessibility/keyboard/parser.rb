@@ -9,10 +9,10 @@ require 'accessibility/keyboard/version'
 #
 # @example
 #
-#   Parser.new("Hai").lex          # => ['H','a','i']
-#   Parser.new("\\CONTROL").lex    # => [["\\CONTROL"]]
-#   Parser.new("\\COMMAND+a").lex  # => [["\\COMMAND", ['a']]]
-#   Parser.new("One\nTwo").lex     # => ['O','n','e',"\n",'T','w','o']
+#   Parser.new("Hai").parse          # => ['H','a','i']
+#   Parser.new("\\CONTROL").parse    # => [["\\CONTROL"]]
+#   Parser.new("\\COMMAND+a").parse  # => [["\\COMMAND", ['a']]]
+#   Parser.new("One\nTwo").parse     # => ['O','n','e',"\n",'T','w','o']
 #
 class Accessibility::Keyboard::Parser
 
@@ -29,8 +29,8 @@ class Accessibility::Keyboard::Parser
   end
 
   ##
-  # Tokenize the string that the lexer was initialized with and
-  # return the sequence of tokens that were lexed.
+  # Tokenize the string that the parser was initialized with and
+  # return the sequence of tokens that were parsed.
   #
   # @return [Array<String,Array<String,...>]
   def parse
@@ -38,9 +38,9 @@ class Accessibility::Keyboard::Parser
     @index = 0
     while @index < length
       @tokens << if custom?
-                   lex_custom
+                   parse_custom
                  else
-                   lex_char
+                   parse_char
                  end
       @index += 1
     end
@@ -65,7 +65,7 @@ class Accessibility::Keyboard::Parser
 
   # @todo refactor
   # @return [Array]
-  def lex_custom
+  def parse_custom
     start = @index
     loop do
       char = @chars[@index]
@@ -76,7 +76,7 @@ class Accessibility::Keyboard::Parser
         else
           tokens  = custom_subseq start
           @index += 1
-          return tokens << lex_custom
+          return tokens << parse_custom
         end
       elsif char == SPACE
         return custom_subseq start
@@ -95,7 +95,7 @@ class Accessibility::Keyboard::Parser
   end
 
   # @return [String]
-  def lex_char
+  def parse_char
     @chars[@index]
   end
 
