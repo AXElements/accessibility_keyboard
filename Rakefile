@@ -26,7 +26,14 @@ task :test => :compile do
   sh "test/runner #{files}"
 end
 
+desc 'Run tests on Travis'
+task :travis_test do
+  files = FileList['test/**/parser_test.rb']
+  sh "test/runner #{files}"
+end
+
 require 'rake/extensiontask'
 Rake::ExtensionTask.new('key_coder', SPEC) do |t|
   t.lib_dir = 'lib/accessibility'
 end
+
