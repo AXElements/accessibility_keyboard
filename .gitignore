@@ -3,4 +3,5 @@ Makefile
 Gemfile.lock
 tmp/
 pkg/
+.yardoc/
 
