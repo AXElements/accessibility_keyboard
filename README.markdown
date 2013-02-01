@@ -17,6 +17,7 @@ as automated functional testing.
 
 [![Dependency Status](https://gemnasium.com/AXElements/accessibility_keyboard.png)](https://gemnasium.com/AXElements/accessibility_keyboard)
 [![Code Climate](https://codeclimate.com/badge.png)](https://codeclimate.com/github/AXElements/accessibility_keyboard)
+[![Build Status](https://travis-ci.org/AXElements/accessibility_keyboard.png?branch=master)](https://travis-ci.org/AXElements/accessibility_keyboard)
 
 
 ## Examples
