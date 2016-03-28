@@ -12,7 +12,7 @@ gem is a component of AXElements.
   s.authors     = ['Mark Rada']
   s.email       = 'mrada@marketcircle.com'
   s.homepage    = 'http://github.com/AXElements/accessibility_keyboard'
-  s.licenses    = ['BSD 3-clause']
+  s.licenses    = ['BSD-3-Clause']
   s.has_rdoc    = 'yard'
   s.extensions << 'ext/key_coder/extconf.rb'
 
